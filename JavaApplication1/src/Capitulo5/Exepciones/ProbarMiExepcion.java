@@ -19,9 +19,12 @@ public class ProbarMiExepcion {
            c.setEdad(-19);
         } catch (ValorNoNegativoException ex) {
             System.out.println(ex.getMessage());
-        }finally{
+        }catch(MenorDeEdadException e ){
+            System.out.println(e.getMessage());
+        }
+            finally{
         
-            System.err.println("este se ejecuta se lane o no la e ");
+            System.out.println("este se ejecuta se lane o no la e ");
         }
         
     }
