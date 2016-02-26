@@ -14,7 +14,7 @@ public class MiPrimerThread extends Thread{
 
     @Override
     public void run() {
-        System.out.println("soy un thread y me llamo" +this.getName());
+       
       
     }
     
