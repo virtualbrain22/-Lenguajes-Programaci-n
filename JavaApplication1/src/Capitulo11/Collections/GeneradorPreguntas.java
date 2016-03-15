@@ -17,11 +17,18 @@ public class GeneradorPreguntas {
       Opcion o1=new Opcion ("Moscu",true);
       Opcion o2=new Opcion ("floremncia",false);
       Opcion o3=new Opcion ("paris",false);
+      Opcion o4=new Opcion ("Mexico",false);
   
+      Opcion op1=new Opcion ("toki0o",false);
+      Opcion op2=new Opcion ("bejin",true);
+      Opcion op3=new Opcion ("seul",false);
+      Opcion op4=new Opcion ("toki0o",false);
+      
       ArrayList<Opcion> opciones=new ArrayList<Opcion>();
       opciones.add(o1);
       opciones.add(o2);
       opciones.add(o3);
+      opciones.add(o4);
       
       Pregunta p1=new Pregunta("Capital de rusia ", opciones );
     
