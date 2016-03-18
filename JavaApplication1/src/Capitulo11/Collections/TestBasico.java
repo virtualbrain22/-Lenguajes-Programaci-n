@@ -6,6 +6,7 @@
 package Capitulo11.Collections;
 
 import java.util.ArrayList;
+import javax.swing.JRadioButton;
 import solucionExamen.pregunta;
 
 /**
@@ -13,7 +14,8 @@ import solucionExamen.pregunta;
  * @author T-101
  */
 public class TestBasico extends javax.swing.JFrame {
-
+ArrayList<Pregunta>preguntas;
+JRadioButton radios[]=new JRadioButton[4];
     /**
      * Creates new form TestBasico
      */
