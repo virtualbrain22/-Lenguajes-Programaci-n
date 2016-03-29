@@ -22,7 +22,7 @@ public class ProbarThreadLaMejor {
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException ex) {
-                    Logger.getLogger(ProbarMisThreads.class.getName()).log(Level.SEVERE, null, ex);
+                
                 }
             }
             }
@@ -37,7 +37,7 @@ public class ProbarThreadLaMejor {
                 try {
                     Thread.sleep(5000);
                 } catch (InterruptedException ex) {
-                    Logger.getLogger(ProbarMisThreads.class.getName()).log(Level.SEVERE, null, ex);
+
                 }
             }
             }
