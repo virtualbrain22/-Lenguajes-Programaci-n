@@ -17,6 +17,7 @@ public class TestBasico extends javax.swing.JFrame {
 ArrayList<Pregunta> preguntas;
 JRadioButton radios[]=new JRadioButton[4];
 int numero=0;
+int x=60;
     /**
      * Creates new form TestBasico
      */
@@ -25,7 +26,27 @@ int numero=0;
                 GeneradorPreguntas.obtenerTodasLasPeguntas();
      
         initComponents();
-   
+        Thread t1=new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                while(true){
+                  x--;
+                  if(x<=0)dispose();
+                  etiquetaReloj.setText(""+x);
+                try{
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex){
+                  Logger.getLogger(TestBasico.class.getName()).log()
+                }
+                }
+                }
+                
+            }
+        }){
+            
+        });
+                t1.start();
         iniciarTodas();
         
         
@@ -50,6 +71,7 @@ int numero=0;
         radio3 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        etiquetaReloj = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,13 +119,18 @@ int numero=0;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2)))
                 .addContainerGap(133, Short.MAX_VALUE))
-            .addComponent(pregunta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(pregunta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(etiquetaReloj, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(pregunta)
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(pregunta)
+                    .addComponent(etiquetaReloj, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(radio0)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -177,6 +204,7 @@ int numero=0;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel etiquetaReloj;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel pregunta;
