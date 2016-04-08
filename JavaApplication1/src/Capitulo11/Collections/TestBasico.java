@@ -37,15 +37,14 @@ int x=60;
                 try{
                     Thread.sleep(1000);
                 } catch (InterruptedException ex){
-                  Logger.getLogger(TestBasico.class.getName()).log()
+            
                 }
-                }
+                
                 }
                 
             }
-        }){
-            
         });
+       
                 t1.start();
         iniciarTodas();
         
